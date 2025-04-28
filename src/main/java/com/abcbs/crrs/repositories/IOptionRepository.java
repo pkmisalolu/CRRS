@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.abcbs.crrs.entity.OptionPK;
 import com.abcbs.crrs.entity.P09Option;
+import com.abcbs.crrs.projections.ICRHelp;
 
 public interface IOptionRepository extends JpaRepository<P09Option, OptionPK> {
 	//For field validation
@@ -16,4 +17,8 @@ public interface IOptionRepository extends JpaRepository<P09Option, OptionPK> {
 
 	@Query("SELECT o.optFieldNarr FROM P09Option o WHERE o.optId.optRecordType = :recordType AND o.optFieldNarr LIKE :optNarr")
 	public	List<String> findFieldNarrListByTypeAndNarrLike( @Param("recordType") String recordType, @Param("optNarr") String optNarr);
+	
+	//For Help
+	@Query("SELECT p.optFieldNarr AS optFieldNarr FROM P09Option p WHERE p.optId.optRecordType = :recordType ORDER BY p.optFieldNarr")
+	public List<ICRHelp> findByRecordType(@Param("recordType") String recordType);
 }
