@@ -6,14 +6,16 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.4.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+
+		<relativePath/>  lookup parent from repository 
 	</parent>
-	<groupId>abcbs</groupId>
+	<groupId>com.abcbs</groupId>
+
 	<artifactId>CRRS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>CRRS</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Cobol to Java conversion</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -28,7 +30,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -42,6 +44,16 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+		    <groupId>jakarta.validation</groupId>
+		    <artifactId>jakarta.validation-api</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.hibernate.validator</groupId>
+		    <artifactId>hibernate-validator</artifactId>
 		</dependency>
 
 		<dependency>
@@ -61,6 +73,11 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
+    		<groupId>org.springdoc</groupId>
+    		<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    		<version>2.2.0</version>
+		</dependency>
+	
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
@@ -74,6 +91,10 @@
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.2.0</version>
+</dependency>
+  <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -105,6 +126,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 
 </project>
